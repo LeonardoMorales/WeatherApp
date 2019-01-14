@@ -13,26 +13,80 @@
         android:hint="Nombre de la ciudad"
         android:inputType="text"/>
 
-    <android.support.v4.widget.NestedScrollView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_below="@id/etCity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/tv"
-            android:paddingTop="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"/>
-
-    </android.support.v4.widget.NestedScrollView>
-
-    <Button
-        android:id="@+id/btn"
+        android:layout_above="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <ListView
+            android:layout_weight="1"
+            android:id="@+id/list_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:text="INTRODUCIR"/>
+        android:weightSum="6">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="INTRODUCIR"
+            android:layout_weight="4"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="°C"
+                android:gravity="center"
+                android:textSize="10sp" />
+
+            <Switch
+                android:id="@+id/swUnits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="°F"
+                android:gravity="center"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

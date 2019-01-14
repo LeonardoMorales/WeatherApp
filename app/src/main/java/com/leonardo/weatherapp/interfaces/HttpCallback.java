@@ -11,8 +11,9 @@ import retrofit2.http.Path;
 
 public interface HttpCallback {
 
-    public void onSucess(Weather response);
+    //public void onSucess(Weather response);
 
-    public void onFailure(String error);
+    //public void onFailure(String error);
 
+    public void getWeather(String city, String units);
 }
